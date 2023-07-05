@@ -1,6 +1,6 @@
-package com.applyskillproject.db;
+package com.applyskillproject.event.db;
 
-import com.applyskillproject.model.MoneyFilterRule;
+import com.applyskillproject.event.model.MoneyFilterRule;
 
 import java.util.ArrayList;
 import java.util.List;

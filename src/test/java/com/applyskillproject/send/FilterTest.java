@@ -1,8 +1,8 @@
 package com.applyskillproject.send;
 
-import com.applyskillproject.db.MoneyFilterRuleRepository;
-import com.applyskillproject.model.FilterCondition;
-import com.applyskillproject.model.MoneyFilterRule;
+import com.applyskillproject.event.db.MoneyFilterRuleRepository;
+import com.applyskillproject.event.model.FilterCondition;
+import com.applyskillproject.event.model.MoneyFilterRule;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;

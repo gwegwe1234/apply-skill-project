@@ -1,4 +1,4 @@
-package com.applyskillproject.model;
+package com.applyskillproject.event.model;
 
 import lombok.*;
 

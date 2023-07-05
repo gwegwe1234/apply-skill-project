@@ -1,7 +1,7 @@
-package com.applyskillproject.filter;
+package com.applyskillproject.event.filter;
 
-import com.applyskillproject.db.MoneyFilterRuleRepository;
-import com.applyskillproject.model.MoneyFilterRule;
+import com.applyskillproject.event.db.MoneyFilterRuleRepository;
+import com.applyskillproject.event.model.MoneyFilterRule;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.servlet.*;
@@ -9,8 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
-
-import static com.applyskillproject.model.MoneyFilterRule.checkFilterRule;
 
 @Slf4j
 public class EventMoneySenderFilter implements Filter {
@@ -30,7 +28,7 @@ public class EventMoneySenderFilter implements Filter {
         List<String> successMessageList = moneyFilterRuleRepository.getRules()
                 .stream()
                 .filter(MoneyFilterRule::isEnable)
-                .filter(moneyFilterRule -> checkFilterRule(moneyFilterRule, httpRequest))
+                .filter(moneyFilterRule -> MoneyFilterRule.checkFilterRule(moneyFilterRule, httpRequest))
                 .map(moneyFilterRule -> sendKafka(httpRequest))
                 .collect(Collectors.toList());
 

@@ -1,6 +1,6 @@
-package com.applyskillproject.config;
+package com.applyskillproject.event.config;
 
-import com.applyskillproject.filter.EventMoneySenderFilter;
+import com.applyskillproject.event.filter.EventMoneySenderFilter;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
